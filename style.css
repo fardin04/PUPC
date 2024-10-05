@@ -1,0 +1,585 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Header styles */
+header {
+    background-color: #0044cc; /* Blue background */
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.club-info {
+    margin-left: 10px;
+}
+
+.club-info h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.club-info p {
+    margin: 0;
+    font-size: 12px;
+    color: white;
+}
+
+/* Navbar and Auth (Sign Up) aligned together */
+.nav-and-auth {
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.navbar ul li a:hover {
+    background-color: #B22234;
+    color: white;
+}
+
+.auth {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.joinus {
+    padding: 5px 10px;
+    background-color: #B22234;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.joinus:hover {
+    background-color: #0044cc;
+}
+
+.fa-user {
+    font-size: 20px;
+    color: white;
+}
+
+/* Search Bar styles */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.search-bar-input {
+    padding: 5px;
+    border: 1px solid #B22234;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.search-button {
+    padding: 5px 15px;
+    background-color: #B22234;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0044cc;
+}
+
+/* Gallery styles */
+.gallery {
+    margin: 40px auto;
+    width: 95%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.big-div {
+    grid-column: span 2;
+    grid-row: span 2;
+    position: relative;
+}
+
+.big-div img,
+.small-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.small-div {
+    position: relative;
+}
+
+.small-div img {
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* Hover effect for gallery images */
+.big-div:hover img,
+.small-div:hover img {
+    transform: scale(1.05);
+}
+
+/* More Photos Grid Layout */
+.more-photos h2 {
+    font-size: 24px;
+    text-align: center;
+    margin: 30px 0;
+    color: #B22234;
+}
+
+.more-photos-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+/* Image Sizes */
+.photo {
+    position: relative;
+    overflow: hidden;
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 4px solid #FFFFFF;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.large-photo {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+.medium-photo {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.small-photo {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/* Hover effect for images */
+.photo:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Overlay Styles */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for the overlay */
+}
+
+.photo:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.overlay-content {
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center overlay content */
+    padding: 20px;
+}
+
+/* Moderator Section */
+.moderators {
+    text-align: center; /* Center the heading */
+    margin: 20px auto; /* Center the section */
+    max-width: 600px; /* Set a max-width for the section */
+}
+
+.carousel-container {
+    position: relative;
+    width: 300px; /* Set a width for the carousel container */
+    height: 400px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 0 auto; /* Center the container */
+}
+
+.carousel-card {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Center the card using left property */
+    transform: translateX(-50%); /* Adjust position to center */
+    width: 80%; /* Set a smaller width for the cards */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.carousel-card h2{
+    margin-bottom: 10px;
+}
+
+.carousel-card.active {
+    opacity: 1;
+}
+
+.carousel-card.active {
+    opacity: 1;
+}
+
+.moderator-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: -35px;
+}
+
+h2 {
+    font-size: 3rem; /* Adjust font size for the heading */
+    margin-top: 40px;
+    margin-bottom: 50px; /* Add margin below the heading */
+    color: #B22234; /* Your theme color */
+}
+
+.carousel-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #B22234; /* Your website color */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-links, .footer-description {
+    width: 300px; /* Adjust width as needed */
+    margin: 10px;
+}
+
+.footer-links h3, .footer-description h3 {
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 8px 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+
+
+/* About us css */
+
+.about-image {
+    width: 100%;
+    overflow: hidden;
+}
+
+.about-image img {
+    margin-top: 40;
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+.about-info {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* White background for content */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-info h2,
+.about-info h3 {
+    color: #B22234; /* Theme color for headings */
+}
+
+.about-info p {
+    line-height: 1.6;
+    color: #333; /* Dark text for readability */
+}
+
+/* Gallery */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.gallery-card:hover {
+    transform: scale(1.05);
+}
+
+.gallery-card h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+
+/* Panel Section */
+
+.panel-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.panel-card {
+    background-color: #f4f4f4; /* Light background for the cards */
+    border: 2px solid #1e3a8a; /* Blue border */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.panel-card:hover {
+    transform: translateY(-10px);
+    background-color: #ff4d4d; /* Red background on hover */
+    color: white; /* White text on hover */
+}
+
+.panel-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #1e3a8a; /* Blue border around the images */
+    margin-bottom: 15px;
+}
+
+.panel-name {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #1e3a8a; /* Blue text for the names */
+}
+
+.panel-designation {
+    font-size: 1rem;
+    color: #ff4d4d; /* Red text for the designations */
+}
+
+.panel-card:hover .panel-name, .panel-card:hover .panel-designation {
+    color: white; /* Change to white on hover */
+}
+
+/* Devs section */
+.developers-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.developer-cards {
+    display: flex; /* Use flexbox to align cards */
+    justify-content: space-around; /* Space cards evenly */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.developer-card {
+    background-color: #fff; /* Background color */
+    border: 1px solid #B22234; /* Border color to match theme */
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    width: 250px; /* Set a fixed width for the cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.developer-card:hover {
+    transform: scale(1.05);
+}
+
+.developer-image {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%; /* Circular images */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #B22234; /* Header color to match theme */
+}
+
+p {
+    margin: 5px 0;
+}
+
+
+
+
+
+
+
+
+/* join us css */
+.join-us {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #B22234; /* Match your website theme color */
+    border-radius: 10px;
+    background-color: #ffe6e6; /* Light background for contrast */
+}
+
+.join-us h2 {
+    text-align: center;
+    color: #B22234; /* Your website's theme color */
+}
+
+.join-us label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #B22234; /* Theme color for labels */
+}
+
+.join-us input,
+.join-us select,
+.join-us textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #B22234; /* Theme color for input borders */
+    border-radius: 5px;
+}
+
+.join-us button {
+    width: 100%;
+    padding: 10px;
+    background-color: #B22234; /* Your website's theme color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.join-us button:hover {
+    background-color: #a11f2c; /* Darker shade on hover */
+}
